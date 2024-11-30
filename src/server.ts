@@ -8,6 +8,21 @@ config(); // dotenv
 const app = express();
 const PORT = process.env.PORT ?? 3001;
 
+// Enable CORS by setting headers
+app.use((req, res, next) => {
+  // Allow all origins (replace * with specific domains if needed)
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+  // Allow preflight requests (OPTIONS)
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
 //middlewares
 app.use(limiter);
 
