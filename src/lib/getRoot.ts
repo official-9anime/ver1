@@ -10,7 +10,7 @@ export const getRoot: RequestHandler = async (_req, res) => {
       sites: {},
     };
 
-    data.docs = "https://github.com/falcon71181/Anime-API/blob/main/README.md";
+    data.docs = "https://9anime.org.lv";
     
 
     const aniwatchStatus = await isSiteReachable("https://hianime.to");
