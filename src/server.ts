@@ -1,6 +1,6 @@
 import express from "express";
 import { config } from "dotenv";
-import { limiter } from "./middlewares/rateLimit";
+// import { limiter } from "./middlewares/rateLimit";
 import { router } from "./routes/routes";
 
 config(); // dotenv
