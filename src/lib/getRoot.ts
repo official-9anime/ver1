@@ -12,9 +12,9 @@ export const getRoot: RequestHandler = async (_req, res) => {
 
     data.docs = "https://github.com/falcon71181/Anime-API/blob/main/README.md";
     
-    const aniwatchtvStatus = await isSiteReachable("https://9animetv.to/");
-    const aniwatchStatus = await isSiteReachable("https://hianime.to/");
 
+    const aniwatchStatus = await isSiteReachable("https://hianime.to");
+    const aniwatchtvStatus = await isSiteReachable("https://aniwatchtv.to");
 
     const gogoanimeStatus = await isSiteReachable("https://gogoanime3.co");
 
