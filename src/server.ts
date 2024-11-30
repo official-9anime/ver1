@@ -8,6 +8,10 @@ config(); // dotenv
 const app = express();
 const PORT = process.env.PORT ?? 3001;
 
+// Trust the first proxy (important for reading X-Forwarded-For header)
+app.set('trust proxy', 1);
+
+
 // Enable CORS by setting headers
 app.use((req, res, next) => {
   // Allow all origins (replace * with specific domains if needed)
