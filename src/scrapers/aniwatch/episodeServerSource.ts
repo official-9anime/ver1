@@ -68,7 +68,7 @@ export const scrapeAnimeEpisodeSources = async (
     );
 
     const $: CheerioAPI = load(resp.data.html);
-    console.log("The response is: ", resp.data.html);
+
     /**
      * vidStreaming -> 4
      * rapidcloud, vidcloud, megacloud  -> 1
