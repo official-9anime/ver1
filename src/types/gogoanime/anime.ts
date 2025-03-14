@@ -1,9 +1,16 @@
 import type { ScrapedHomePage } from "./home";
+import type { ScrapedEpisodes } from "./episodes";
 
 interface Anime {
   id: string | null;
   name: string | null;
   img: string | null;
+}
+
+interface Episode {
+  id: string;
+  title: string;
+  link: string;
 }
 
 interface AboutAnimeInfo {
@@ -30,6 +37,7 @@ interface NewSeason extends Anime {
 }
 
 interface PopularAnime extends NewSeason {}
+interface CompletedAnime extends NewSeason {}
 interface AnimeMovie extends NewSeason {}
 interface TopAiring extends Anime {
   latestEp: string;
@@ -43,12 +51,15 @@ interface SearchedAnime extends Anime {
 
 export type {
   ScrapedHomePage,
+  ScrapedEpisodes,
   RecentRelease,
   Anime,
   NewSeason,
   PopularAnime,
+  CompletedAnime,
   AnimeMovie,
   TopAiring,
   SearchedAnime,
   AboutAnimeInfo,
+  Episode,
 };

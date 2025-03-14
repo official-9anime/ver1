@@ -2,15 +2,17 @@ import { isSiteReachable } from "../../lib/isSiteReachable";
 import { websites_collection, AnimeWebsiteConfig } from "../../config/websites";
 
 type GogoAnimeConfig = {
-  "BASE": string,
-  "SEARCH": string,
-  "CATEGORY": string,
-  "MOVIES": string,
-  "POPULAR": string,
-  "NEW_SEASON": string,
-  "SEASONS": string,
-  "AJAX": string,
-}
+  BASE: string;
+  HOME: string;
+  SEARCH: string;
+  CATEGORY: string;
+  MOVIES: string;
+  POPULAR: string;
+  NEW_SEASON: string;
+  SEASONS: string;
+  COMPLETED: string;
+  AJAX: string;
+};
 
 const gogoanime: AnimeWebsiteConfig = websites_collection["GogoAnime"];
 // storing initial base link
@@ -39,15 +41,17 @@ const makeGogoAnimeObj = (gogoanime_base: string): GogoAnimeConfig => {
   // console.log(gogoanime_base);
   return {
     BASE: gogoanime.BASE,
+    HOME: `${gogoanime_base}/home.html`,
     SEARCH: `${gogoanime_base}/search.html`,
     CATEGORY: `${gogoanime_base}/category/`,
     MOVIES: `${gogoanime_base}/anime-movies.html`,
     POPULAR: `${gogoanime_base}/popular.html`,
     NEW_SEASON: `${gogoanime_base}/new-season.html`,
     SEASONS: `${gogoanime_base}/sub-category/`,
+    COMPLETED: `${gogoanime_base}/completed-anime.html`,
     AJAX: "https://ajax.gogocdn.net/ajax",
-  }
-}
+  };
+};
 
 // return fn
 const URL_fn = async (): Promise<GogoAnimeConfig> => {
